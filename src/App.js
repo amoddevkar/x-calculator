@@ -7,6 +7,7 @@ function App() {
   const [result, setResult] = useState("")
 
   const handleCalculateResult = () => {
+    if (inputValue == "") return setResult("Error")
     try {
       let result = new Function(`return ${inputValue}`)();
       return setResult(result);
